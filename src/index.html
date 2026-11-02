@@ -6,38 +6,204 @@
   <link rel="stylesheet" href="./assets/styles/style.css">
 </head>
 <body>
-  <header>
-    <img src="./assets/img/logo.png" alt="Лого" width="67">
-    <nav>
+
+  <!-- 1. Шапка сайта -->
+  <header class="site-header">
+    <div class="header-logo">
+      <img src="./assets/img/logo.png" alt="Лого" width="67">
+    </div>
+
+    <nav class="header-nav">
       <ul>
         <li><a href="index.html">Главная</a></li>
         <li><a href="contacts.html">Контакты</a></li>
       </ul>
     </nav>
+
+    <div class="header-contacts">
+      <a href="tel:+78005553535" class="text">+8 (800) 555 35 35</a>
+      <a href="mailto:ivangritsyuk98@gmail.com" class="text">ivangritsyuk98@gmail.com</a>
+    </div>
   </header>
 
-  <h1 class="title-h1">Добро пожаловать!</h1>
-  <p class="text">Главная страница моего сайта</p>
-
-  <h3 class="title-h3">Что умеем</h3>
-  <h4 class="title-h4">Почему вы решили выбрать нас?</h4>
-  <p class="text">Потому что мы знаем толк в моде и как поднять настроение</p>
-
-  <h3 class="title-h3">Спектор услуг</h3>
-  <p class="text">Консультация, помощь в написание текстом и прочие услуги</p>
+  <nav class="breadcrumbs">
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="contacts.html">Контакты</a></li>
+    </ul>
+  </nav>
 
   <hr>
 
-  <footer>
-    <h3 class="title-h3">Позвоните нам пж</h3>
-    <p class="text">Мы вам обязательно перезвоним в течение этого дня</p>
+  <main>
+
+    <!-- 2. Главный баннер -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1 class="title-h1">Добро пожаловать!</h1>
+        <p class="text">Главная страница моего сайта</p>
+      </div>
+
+      <form class="contact-form hero-form" action="#" method="post">
+        <h2 class="title-h4">Оставьте контакты, и мы перезвоним</h2>
+        <label>Телефон
+          <input class="input" type="tel" name="phone">
+        </label>
+        <label>Имя
+          <input class="input" type="text" name="name">
+        </label>
+        <button class="btn-submit" type="submit">Получить консультацию</button>
+      </form>
+
+      <img class="hero-image" src="./assets/img/hero.png" alt="Главный баннер">
+    </section>
+
     <hr>
-    <ul>
-      <li class="text">Наши контакты:</li>
-      <li class="text">+8 (800) 555 35 35</li>
-      <li class="text">ivangritsyuk98@gmail.com</li>
-    </ul>
-    <p class="text">© Все права защищены.</p>
+
+    <section class="features-section">
+      <h2 class="title-h2">Что умеем</h2>
+
+      <article class="feature-card">
+        <h3 class="title-h4">Почему вы решили выбрать нас?</h3>
+        <p class="text">Потому что мы знаем толк в моде и как поднять настроение</p>
+      </article>
+
+      <ul class="features-list">
+        <li class="text"><a href="#">Первое направление</a></li>
+        <li class="text"><a href="#">Второе направление</a></li>
+        <li class="text"><a href="#">Третье направление</a></li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <section class="services-section">
+      <h2 class="title-h2">Спектр услуг</h2>
+      <ul class="services-list">
+        <li class="text">Консультация</li>
+        <li class="text">Помощь в написании текстов</li>
+        <li class="text">Прочие услуги</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <section class="projects-section">
+      <h2 class="title-h2">Наши проекты</h2>
+      <p class="text">Мы гордимся проектами, с которыми работали</p>
+
+      <nav class="projects-tabs">
+        <ul>
+          <li><a href="#">Проект 1</a></li>
+          <li><a href="#">Проект 2</a></li>
+          <li><a href="#">Проект 3</a></li>
+        </ul>
+      </nav>
+
+      <article class="project-card">
+        <h3 class="title-h4">Проект 1</h3>
+        <p class="text">Краткое описание проекта</p>
+        <img src="./assets/img/project.png" alt="Проект 1" width="200">
+      </article>
+    </section>
+
+    <hr>
+
+    <section class="discuss-section">
+      <h2 class="title-h2">Обсудим ваш проект</h2>
+      <p class="text">Расскажем, как это сделать и сколько это стоит</p>
+    </section>
+
+    <hr>
+
+    <section class="stages-section">
+      <h2 class="title-h2">Этапы работы</h2>
+
+      <article class="stage-card">
+        <h3 class="title-h4">Анализ</h3>
+        <p class="text">Изучаем задачу</p>
+      </article>
+      <article class="stage-card">
+        <h3 class="title-h4">Дизайн</h3>
+        <p class="text">Рисуем интерфейс</p>
+      </article>
+      <article class="stage-card">
+        <h3 class="title-h4">Разработка</h3>
+        <p class="text">Пишем код</p>
+      </article>
+      <article class="stage-card">
+        <h3 class="title-h4">Тестирование</h3>
+        <p class="text">Проверяем работу</p>
+      </article>
+      <article class="stage-card">
+        <h3 class="title-h4">Запуск</h3>
+        <p class="text">Публикуем результат</p>
+      </article>
+      <article class="stage-card">
+        <h3 class="title-h4">Поддержка</h3>
+        <p class="text">Сопровождаем после запуска</p>
+      </article>
+    </section>
+
+    <hr>
+
+    <section class="team-section">
+      <div class="team-info">
+        <h2 class="title-h2">Наша команда</h2>
+        <p class="text">Мы небольшая команда специалистов</p>
+        <ul class="team-stats">
+          <li class="text">28 сотрудников</li>
+          <li class="text">100 проектов</li>
+          <li class="text">7 лет опыта</li>
+        </ul>
+      </div>
+      <img class="team-photo" src="./assets/img/team.jpg" alt="Наша команда" width="300">
+    </section>
+
+    <hr>
+
+    <section class="faq-section">
+      <h2 class="title-h2">Частые вопросы</h2>
+
+      <article class="faq-item">
+        <h3 class="title-h4">Сколько это стоит?</h3>
+        <p class="text">Стоимость зависит от задачи.</p>
+      </article>
+      <article class="faq-item">
+        <h3 class="title-h4">Есть ли гарантия?</h3>
+        <p class="text">Да, мы даём гарантию на работу.</p>
+      </article>
+      <article class="faq-item">
+        <h3 class="title-h4">Сколько времени занимает работа?</h3>
+        <p class="text">От нескольких недель до нескольких месяцев.</p>
+      </article>
+      <article class="faq-item">
+        <h3 class="title-h4">Вы гарантируете конфиденциальность?</h3>
+        <p class="text">Да, идея остаётся у вас.</p>
+      </article>
+    </section>
+
+  </main>
+
+  <hr>
+
+  <footer class="site-footer">
+    <div class="footer-contacts">
+      <h2 class="title-h2">ждем вашего звонка!</h2>
+      <p class="text">Мы вам обязательно перезвоним в течение этого дня</p>
+    </div>
+
+    <hr>
+
+    <div class="footer-info">
+      <ul>
+        <li class="text">Наши контакты:</li>
+        <li class="text">+8 (800) 555 35 35</li>
+        <li class="text">ivangritsyuk98@gmail.com</li>
+      </ul>
+      <p class="text">© Все права защищены.</p>
+    </div>
   </footer>
+
 </body>
 </html>
