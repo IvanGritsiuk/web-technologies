@@ -1,209 +1,446 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Главная</title>
-  <link rel="stylesheet" href="./assets/styles/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Website</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
 </head>
+
 <body>
+    <header class="site-header">
 
-  <!-- 1. Шапка сайта -->
-  <header class="site-header">
-    <div class="header-logo">
-      <img src="./assets/img/logo.png" alt="Лого" width="67">
-    </div>
+        <div class="header-container">
 
-    <nav class="header-nav">
-      <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="contacts.html">Контакты</a></li>
-      </ul>
-    </nav>
+            <a class="logo" href="#">IT WEBSITE</a>
 
-    <div class="header-contacts">
-      <a href="tel:+78005553535" class="text">+8 (800) 555 35 35</a>
-      <a href="mailto:ivangritsyuk98@gmail.com" class="text">ivangritsyuk98@gmail.com</a>
-    </div>
-  </header>
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#media">Media</a></li>
+                    <li><a href="#cases">Cases</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                </ul>
+            </nav>
 
-  <nav class="breadcrumbs">
-    <ul>
-      <li><a href="index.html">Главная</a></li>
-      <li><a href="contacts.html">Контакты</a></li>
-    </ul>
-  </nav>
+            <div class="header-contacts">
+                <a href="tel:+71111111111">+7 (111) 111 11 11</a>
+                <a href="tel:+71111111111">+7 (111) 111 11 11</a>
+                <a href="mailto:itcompany@gmail.com">itcompany@gmail.com</a>
+            </div>
 
-  <hr>
+        </div>
 
-  <main>
-
-    <!-- 2. Главный баннер -->
-    <section class="hero-section">
-      <div class="hero-content">
-        <h1 class="title-h1">Добро пожаловать!</h1>
-        <p class="text">Главная страница моего сайта</p>
-      </div>
-
-      <form class="contact-form hero-form" action="#" method="post">
-        <h2 class="title-h4">Оставьте контакты, и мы перезвоним</h2>
-        <label>Телефон
-          <input class="input" type="tel" name="phone">
-        </label>
-        <label>Имя
-          <input class="input" type="text" name="name">
-        </label>
-        <button class="btn-submit" type="submit">Получить консультацию</button>
-      </form>
-
-      <img class="hero-image" src="./assets/img/hero.png" alt="Главный баннер">
-    </section>
+    </header>
 
     <hr>
 
-    <section class="features-section">
-      <h2 class="title-h2">Что умеем</h2>
+    <main>
+        <section class="hero-section">
 
-      <article class="feature-card">
-        <h3 class="title-h4">Почему вы решили выбрать нас?</h3>
-        <p class="text">Потому что мы знаем толк в моде и как поднять настроение</p>
-      </article>
+            <div class="hero-content">
 
-      <ul class="features-list">
-        <li class="text"><a href="#">Первое направление</a></li>
-        <li class="text"><a href="#">Второе направление</a></li>
-        <li class="text"><a href="#">Третье направление</a></li>
-      </ul>
-    </section>
+                <article class="hero-description">
+
+                    <h1> Development of mobile applications and web services of any complexity </h1>
+
+                    <p> We create mobile applications for iOS, Android that transfer your business to mobile applications of your customers' devices </p>
+
+                </article>
+
+                <form class="hero-form" action="#" method="post">
+
+                    <h2> Leave your contacts and we will call you back within 30 minutes </h2>
+
+                    <div class="form-field">
+                        <label for="hero-phone">Phone number</label>
+                        <input id="hero-phone" type="tel" name="phone">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="hero-name">Full name</label>
+                        <input id="hero-name" type="text" name="name" >
+                    </div>
+
+                    <button type="submit"> Get <br> consultation </button>
+
+                </form>
+
+            </div>
+
+            <div class="hero-image">
+                <img src="assets/img/comments.png" alt="Mobile applications">
+            </div>
+
+        </section>
+
+        <hr>
+
+        <section class="development-section" id="services">
+
+            <article class="development-description">
+
+                <h2>Full development cycle</h2>
+
+                <p>We use proven technologies</p>
+
+                <h3>Web</h3>
+
+                <p> PHP / Javascript / Node.JS / Web Socket / Socket.io / Vue.js / Nuxt / MySQL / Laravel / GO lang / django / Python </p>
+
+                <h3>Mobile</h3>
+
+                <p> Swift / Kotlin / Alamofire / Firebase / CoreData / Room / Realm / Coroutine / RxJava / RxSwift / Unit Test / Navigation </p>
+
+            </article>
+
+            <aside class="services-list">
+
+                <h2>Services</h2>
+
+                <ul>
+                    <li>iOS development</li>
+                    <li>Android development</li>
+                    <li>Web development</li>
+                    <li>UI/UX design</li>
+                    <li>Testing</li>
+                    <li>Launch</li>
+                    <li>IT consulting</li>
+                </ul>
+
+            </aside>
+
+        </section>
+
+        <hr>
+
+        <section class="industries-section" id="industries">
+
+            <h2>
+                Developed more than 100<br>
+                projects in 15 industries
+            </h2>
+
+            <ul class="industries-list">
+                <li>Social media</li>
+                <li>Education</li>
+                <li>AR technology</li>
+                <li>Fitness and sport</li>
+                <li>Auto, transport</li>
+                <li>TV series</li>
+                <li>Bank</li>
+                <li>Medicine, health</li>
+                <li>Startups</li>
+                <li>Construction</li>
+                <li>Restaurants, food delivery</li>
+                <li>Religion</li>
+                <li>Game projects</li>
+                <li>Marketplaces</li>
+                <li>Online courses</li>
+            </ul>
+
+        </section>
+
+        <hr>
+
+        <section class="projects-section" id="cases">
+
+            <div class="projects-intro">
+
+                <h2>Projects we are proud of</h2>
+
+                <p> Our software development company is truly proud of the wonderful clients we have worked with. We enjoy a long-term partnership </p>
+
+            </div>
+
+            <nav class="projects-navigation">
+                <ul>
+                    <li><a href="#i-teka">I-teka</a></li>
+                    <li><a href="#cases">Dauletten</a></li>
+                    <li><a href="#cases">Guru Bosch</a></li>
+                    <li><a href="#cases">Santo</a></li>
+                    <li><a href="#cases">Home Credit Bank</a></li>
+                    <li><a href="#cases">BI Partners</a></li>
+                    <li><a href="#cases">Europharma</a></li>
+                </ul>
+
+                <a href="#cases">View 100 more projects</a>
+            </nav>
+
+            <article class="project-card" id="i-teka">
+
+                <div class="project-description">
+
+                    <h3>I-teka</h3>
+
+                    <p> The application is designed to search for drugs by availability
+                        in pharmacies in cities. During quarantine, the application
+                        helped many people, which gives more value.
+                    </p>
+
+                    <p> Business analysis / iOS / Android / QA / UI/UX Design </p>
+
+                    <ul>
+                        <li>Kazakhstan</li>
+                        <li>Medicine</li>
+                    </ul>
+
+                    <dl>
+                        <div>
+                            <dt>400%</dt>
+                            <dd>User Growth</dd>
+                        </div>
+
+                        <div>
+                            <dt>+ 200 000</dt>
+                            <dd>Active Users</dd>
+                        </div>
+                    </dl>
+
+                    <ul class="app-links">
+                        <li>
+                            <a href="#"><img src="assets/img/apple.png" alt="Download on the App Store"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="assets/img/google.png" alt="Get it on Google Play"></a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="project-image">
+                    <img src="assets/img/phone.jpg" alt="I-teka application">
+                </div>
+
+            </article>
+
+        </section>
+
+        <hr>
+
+        <section class="discussion-section">
+
+            <article class="discussion-description">
+
+                <h2>Let's discuss<br>Your project</h2>
+
+                <p> Let's figure out how to create an effective application, its cost and terms of its development </p>
+
+            </article>
+
+            <form class="discussion-form" action="#" method="post">
+
+                <label for="discussion-phone">Best phone number</label>
+                <input id="discussion-phone" type="tel" name="phone">
+
+                <label for="discussion-name">Full name</label>
+                <input id="discussion-name" type="text" name="name">
+
+                <button type="submit">Discuss the project</button>
+
+            </form>
+
+        </section>
+
+        <hr>
+
+        <section class="stages-section" id="stages">
+
+            <h2>Application Development Stages</h2>
+
+            <div class="stages-list">
+
+                <article class="stage-item">
+                    <h3>Analysis</h3>
+                    <p> We write technical specifications for development,
+                        taking into account the business processes and technologies
+                        of the customer and the needs of users.
+                    </p>
+                </article>
+
+                <article class="stage-item">
+                    <h3>Design</h3>
+                    <p> We adapt the customer's corporate identity to the platform guidelines. We draw convenient and understandable interfaces. </p>
+                </article>
+
+                <article class="stage-item">
+                    <h3>Development</h3>
+                    <p> We create an extensible architecture, write clean and stable code. We integrate with customer technologies. </p>
+                </article>
+
+                <article class="stage-item">
+                    <h3>Testing</h3>
+                    <p> We carry out functional testing and do bug fixes. We adapt the application to different phone resolutions. </p>
+                </article>
+
+                <article class="stage-item">
+                    <h3>Launching</h3>
+                    <p> We design the application page and publish it in the App Store and Google Play stores. </p>
+                </article>
+
+                <article class="stage-item">
+                    <h3>Support</h3>
+                    <p> We monitor the stability of the application, update it for new devices and versions of iOS and Android.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <hr>
+
+        <section class="team-section" id="media">
+
+            <article class="team-description">
+
+                <h2>Our team</h2>
+
+                <p> Thousand is a full-cycle digital production company with its own product analytics, design, web and mobile development. </p>
+
+                <dl class="team-statistics">
+
+                    <div>
+                        <dt>28</dt>
+                        <dd>team members</dd>
+                    </div>
+
+                    <div>
+                        <dt>+100</dt>
+                        <dd>projects</dd>
+                    </div>
+
+                    <div>
+                        <dt>7 years</dt>
+                        <dd>in IT sphere</dd>
+                    </div>
+
+                </dl>
+
+                <p> All the necessary specialists - from a designer to a tester -
+                    are on our staff. We hire the best specialists in the market.
+                    It's expensive but worth it
+                </p>
+
+            </article>
+
+            <div class="team-image">
+                <img src="assets/img/team.png" alt="Our team">
+            </div>
+
+        </section>
+
+        <hr>
+
+        <section class="book-section">
+
+            <article class="book-description">
+
+                <h2> Get the book for free by leaving<br> your contacts </h2>
+
+                <form class="book-form" action="#" method="post">
+
+                    <label for="book-phone">Phone number</label>
+                    <input id="book-phone" type="tel" name="phone">
+
+                    <label for="book-name">Your full name</label>
+                    <input id="book-name" type="text" name="name">
+
+                    <label for="book-email">email</label>
+                    <input id="book-email" type="email" name="email">
+
+                    <button type="submit">Send me e-book to my mail</button>
+
+                </form>
+
+            </article>
+
+            <div class="book-image">
+                <img src="assets/img/book.jpg" alt="Book">
+            </div>
+
+        </section>
+
+        <hr>
+
+        <section class="faq-section" id="faq">
+
+            <h2>FAQ</h2>
+
+            <div class="faq-content">
+
+                <div class="faq-questions">
+
+                    <article class="faq-question">
+                        <h3>What is the cost of a mobile application?</h3>
+                        <button type="button">+</button>
+                        <p>Answer.</p>
+                    </article>
+
+                    <article class="faq-question">
+                        <h3>Do you provide a guarantee for the mobile application?</h3>
+                        <button type="button">+</button>
+                        <p>Answer.</p>
+                    </article>
+
+                    <article class="faq-question">
+                        <h3>How long will development take?</h3>
+                        <button type="button">+</button>
+                        <p>Answer.</p>
+                    </article>
+
+                    <article class="faq-question">
+                        <h3>I will not tell my idea, do you guarantee confidentiality?</h3>
+                        <button type="button">+</button>
+                        <p>Answer.</p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
 
     <hr>
 
-    <section class="services-section">
-      <h2 class="title-h2">Спектр услуг</h2>
-      <ul class="services-list">
-        <li class="text">Консультация</li>
-        <li class="text">Помощь в написании текстов</li>
-        <li class="text">Прочие услуги</li>
-      </ul>
-    </section>
+    <footer class="site-footer" id="contacts">
 
-    <hr>
+        <div class="footer-container">
 
-    <section class="projects-section">
-      <h2 class="title-h2">Наши проекты</h2>
-      <p class="text">Мы гордимся проектами, с которыми работали</p>
+            <h2>IT WEBSITE</h2>
 
-      <nav class="projects-tabs">
-        <ul>
-          <li><a href="#">Проект 1</a></li>
-          <li><a href="#">Проект 2</a></li>
-          <li><a href="#">Проект 3</a></li>
-        </ul>
-      </nav>
+            <div class="footer-contacts">
 
-      <article class="project-card">
-        <h3 class="title-h4">Проект 1</h3>
-        <p class="text">Краткое описание проекта</p>
-        <img src="./assets/img/project.png" alt="Проект 1" width="200">
-      </article>
-    </section>
+                <section class="footer-contact">
+                    <h3>Contact nums</h3>
+                    <p>+7 (778) 395 90 26</p>
+                </section>
 
-    <hr>
+                <section class="footer-contact">
+                    <h3>Post</h3>
+                    <p>mail@mail.com</p>
+                </section>
 
-    <section class="discuss-section">
-      <h2 class="title-h2">Обсудим ваш проект</h2>
-      <p class="text">Расскажем, как это сделать и сколько это стоит</p>
-    </section>
+                <section class="footer-contact">
+                    <h3>Address</h3>
+                    <p>City city, street st. 90</p>
+                </section>
 
-    <hr>
+                <section class="footer-contact">
+                    <h3>Leave a request</h3>
+                    <p>Leave a request</p>
+                </section>
 
-    <section class="stages-section">
-      <h2 class="title-h2">Этапы работы</h2>
+            </div>
 
-      <article class="stage-card">
-        <h3 class="title-h4">Анализ</h3>
-        <p class="text">Изучаем задачу</p>
-      </article>
-      <article class="stage-card">
-        <h3 class="title-h4">Дизайн</h3>
-        <p class="text">Рисуем интерфейс</p>
-      </article>
-      <article class="stage-card">
-        <h3 class="title-h4">Разработка</h3>
-        <p class="text">Пишем код</p>
-      </article>
-      <article class="stage-card">
-        <h3 class="title-h4">Тестирование</h3>
-        <p class="text">Проверяем работу</p>
-      </article>
-      <article class="stage-card">
-        <h3 class="title-h4">Запуск</h3>
-        <p class="text">Публикуем результат</p>
-      </article>
-      <article class="stage-card">
-        <h3 class="title-h4">Поддержка</h3>
-        <p class="text">Сопровождаем после запуска</p>
-      </article>
-    </section>
+            <p class="footer-note">We work throughout world</p>
 
-    <hr>
+        </div>
 
-    <section class="team-section">
-      <div class="team-info">
-        <h2 class="title-h2">Наша команда</h2>
-        <p class="text">Мы небольшая команда специалистов</p>
-        <ul class="team-stats">
-          <li class="text">28 сотрудников</li>
-          <li class="text">100 проектов</li>
-          <li class="text">7 лет опыта</li>
-        </ul>
-      </div>
-      <img class="team-photo" src="./assets/img/team.jpg" alt="Наша команда" width="300">
-    </section>
-
-    <hr>
-
-    <section class="faq-section">
-      <h2 class="title-h2">Частые вопросы</h2>
-
-      <article class="faq-item">
-        <h3 class="title-h4">Сколько это стоит?</h3>
-        <p class="text">Стоимость зависит от задачи.</p>
-      </article>
-      <article class="faq-item">
-        <h3 class="title-h4">Есть ли гарантия?</h3>
-        <p class="text">Да, мы даём гарантию на работу.</p>
-      </article>
-      <article class="faq-item">
-        <h3 class="title-h4">Сколько времени занимает работа?</h3>
-        <p class="text">От нескольких недель до нескольких месяцев.</p>
-      </article>
-      <article class="faq-item">
-        <h3 class="title-h4">Вы гарантируете конфиденциальность?</h3>
-        <p class="text">Да, идея остаётся у вас.</p>
-      </article>
-    </section>
-
-  </main>
-
-  <hr>
-
-  <footer class="site-footer">
-    <div class="footer-contacts">
-      <h2 class="title-h2">ждем вашего звонка!</h2>
-      <p class="text">Мы вам обязательно перезвоним в течение этого дня</p>
-    </div>
-
-    <hr>
-
-    <div class="footer-info">
-      <ul>
-        <li class="text">Наши контакты:</li>
-        <li class="text">+8 (800) 555 35 35</li>
-        <li class="text">ivangritsyuk98@gmail.com</li>
-      </ul>
-      <p class="text">© Все права защищены.</p>
-    </div>
-  </footer>
+    </footer>
 
 </body>
 </html>
