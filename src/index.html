@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +12,15 @@
 
         <div class="header-container">
 
+            <button class="burger-menu" type="button" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+                <a class="logo" href="#">IT WEBSITE</a>
 
-            <a class="logo" href="#">IT WEBSITE</a>
-
-            <nav class="main-navigation">
+            <nav class="main-navigation" id="main-navigation">
                 <ul>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#media">Media</a></li>
@@ -26,16 +31,14 @@
             </nav>
 
             <div class="header-contacts">
+                <a href="tel:+71111111111"><img src="assets/img/phoneimg.png" alt="">+7 (111) 111 11 11</a>
                 <a href="tel:+71111111111">+7 (111) 111 11 11</a>
-                <a href="tel:+71111111111">+7 (111) 111 11 11</a>
-                <a href="mailto:itcompany@gmail.com">itcompany@gmail.com</a>
+                <a href="mailto:itcompany@gmail.com"><img src="assets/img/mailimg.png" alt="">itcompany@gmail.com</a>
             </div>
 
         </div>
 
     </header>
-    
-    <hr>
 
     <main>
         <section class="hero-section">
@@ -44,27 +47,39 @@
 
                 <article class="hero-description">
 
-                    <h1> Development of mobile applications and web services of any complexity </h1>
+                    <h1>
+                        Development of <span>mobile applications</span> and <span>web services</span>
+                        of any complexity
+                    </h1>
 
-                    <p> We create mobile applications for iOS, Android that transfer your business to mobile applications of your customers' devices </p>
+                    <p>
+                        We create mobile applications for iOS, Android that transfer
+                        your business to mobile applications of your customers' devices
+                    </p>
 
                 </article>
 
                 <form class="hero-form" action="#" method="post">
 
-                    <h2> Leave your contacts and we will call you back within 30 minutes </h2>
+                    <h2>
+                        Leave your contacts and we will call you back<br>
+                        within 30 minutes
+                    </h2>
 
                     <div class="form-field">
                         <label for="hero-phone">Phone number</label>
-                        <input id="hero-phone" type="tel" name="phone">
+                        <input id="hero-phone" type="tel" name="phone" placeholder=" +7 (111) 111-11-11">
                     </div>
 
                     <div class="form-field">
                         <label for="hero-name">Full name</label>
-                        <input id="hero-name" type="text" name="name" >
+                        <input id="hero-name" type="text" name="name" placeholder="Иван Иванов">
                     </div>
 
-                    <button type="submit"> Get <br> consultation </button>
+                    <button type="submit">
+                        Get<br>
+                        consultation
+                    </button>
 
                 </form>
 
@@ -76,7 +91,6 @@
 
         </section>
 
-        <hr>
 
         <section class="development-section" id="services">
 
@@ -88,26 +102,30 @@
 
                 <h3>Web</h3>
 
-                <p> PHP / Javascript / Node.JS / Web Socket / Socket.io / Vue.js / Nuxt / MySQL / Laravel / GO lang / django / Python </p>
+                <p>
+                    PHP / Javascript / Node.JS / Web Socket / Socket.io / Vue.js /
+                    Nuxt / MySQL / Laravel / GO lang / django / Python
+                </p>
 
                 <h3>Mobile</h3>
 
-                <p> Swift / Kotlin / Alamofire / Firebase / CoreData / Room / Realm / Coroutine / RxJava / RxSwift / Unit Test / Navigation </p>
+                <p>
+                    Swift / Kotlin / Alamofire / Firebase / CoreData / Room / Realm /
+                    Coroutine / RxJava / RxSwift / Unit Test / Navigation
+                </p>
 
             </article>
 
             <aside class="services-list">
 
-                <h2>Services</h2>
-
                 <ul>
-                    <li>iOS development</li>
-                    <li>Android development</li>
-                    <li>Web development</li>
-                    <li>UI/UX design</li>
-                    <li>Testing</li>
-                    <li>Launch</li>
-                    <li>IT consulting</li>
+                    <li tabindex="0">iOS development<img src="assets/img/arrow.png" alt=""></li>
+                    <li tabindex="0">Android development<img src="assets/img/arrow.png" alt=""></li>
+                    <li tabindex="0">Web development<img src="assets/img/arrow.png" alt=""></li>
+                    <li tabindex="0">UI/UX design<img src="assets/img/arrow.png" alt=""></li>
+                    <li tabindex="0">Testing<img src="assets/img/arrow.png" alt=""></li>
+                    <li tabindex="0">Launch<img src="assets/img/arrow.png" alt=""></li>
+                    <li tabindex="0">IT consulting<img src="assets/img/arrow.png" alt=""></li>
                 </ul>
 
             </aside>
@@ -116,7 +134,7 @@
 
         <hr>
 
-        <section class="industries-section" id="industries">
+        <section class="industries-section" id="cases">
 
             <h2>
                 Developed more than 100<br>
@@ -145,28 +163,31 @@
 
         <hr>
 
-        <section class="projects-section" id="cases">
+        <section class="projects-section">
 
             <div class="projects-intro">
 
                 <h2>Projects we are proud of</h2>
 
-                <p> Our software development company is truly proud of the wonderful clients we have worked with. We enjoy a long-term partnership </p>
+                <p>
+                    Our software development company is truly proud of the wonderful
+                    clients we have worked with. We enjoy a long-term partnership
+                </p>
 
             </div>
 
             <nav class="projects-navigation">
                 <ul>
                     <li><a href="#i-teka">I-teka</a></li>
-                    <li><a href="#cases">Dauletten</a></li>
-                    <li><a href="#cases">Guru Bosch</a></li>
-                    <li><a href="#cases">Santo</a></li>
-                    <li><a href="#cases">Home Credit Bank</a></li>
-                    <li><a href="#cases">BI Partners</a></li>
-                    <li><a href="#cases">Europharma</a></li>
+                    <li><a href="#dauletteen">Dauletteen</a></li>
+                    <li><a href="#guru-bosch">Guru Bosch</a></li>
+                    <li><a href="#santo">Santo</a></li>
+                    <li><a href="#home-credit-bank">Home Credit Bank</a></li>
+                    <li><a href="#bi-partners">BI Partners</a></li>
+                    <li><a href="#europharma">Europharma</a></li>
                 </ul>
 
-                <a href="#cases">View 100 more projects</a>
+                <a href="#all-projects">View 100 more projects</a>
             </nav>
 
             <article class="project-card" id="i-teka">
@@ -175,12 +196,15 @@
 
                     <h3>I-teka</h3>
 
-                    <p> The application is designed to search for drugs by availability
+                    <p>
+                        The application is designed to search for drugs by availability
                         in pharmacies in cities. During quarantine, the application
                         helped many people, which gives more value.
                     </p>
 
-                    <p> Business analysis / iOS / Android / QA / UI/UX Design </p>
+                    <p>
+                        Business analysis / iOS / Android / QA / UI/UX Design
+                    </p>
 
                     <ul>
                         <li>Kazakhstan</li>
@@ -226,7 +250,10 @@
 
                 <h2>Let's discuss<br>Your project</h2>
 
-                <p> Let's figure out how to create an effective application, its cost and terms of its development </p>
+                <p>
+                    Let's figure out how to create an effective application,
+                    its cost and terms of its development
+                </p>
 
             </article>
 
@@ -246,7 +273,7 @@
 
         <hr>
 
-        <section class="stages-section" id="stages">
+        <section class="stages-section" id="media">
 
             <h2>Application Development Stages</h2>
 
@@ -254,7 +281,8 @@
 
                 <article class="stage-item">
                     <h3>Analysis</h3>
-                    <p> We write technical specifications for development,
+                    <p>
+                        We write technical specifications for development,
                         taking into account the business processes and technologies
                         of the customer and the needs of users.
                     </p>
@@ -262,27 +290,41 @@
 
                 <article class="stage-item">
                     <h3>Design</h3>
-                    <p> We adapt the customer's corporate identity to the platform guidelines. We draw convenient and understandable interfaces. </p>
+                    <p>
+                        We adapt the customer's corporate identity to the platform
+                        guidelines. We draw convenient and understandable interfaces.
+                    </p>
                 </article>
 
                 <article class="stage-item">
                     <h3>Development</h3>
-                    <p> We create an extensible architecture, write clean and stable code. We integrate with customer technologies. </p>
+                    <p>
+                        We create an extensible architecture, write clean and stable
+                        code. We integrate with customer technologies.
+                    </p>
                 </article>
 
                 <article class="stage-item">
                     <h3>Testing</h3>
-                    <p> We carry out functional testing and do bug fixes. We adapt the application to different phone resolutions. </p>
+                    <p>
+                        We carry out functional testing and do bug fixes.
+                        We adapt the application to different phone resolutions.
+                    </p>
                 </article>
 
                 <article class="stage-item">
                     <h3>Launching</h3>
-                    <p> We design the application page and publish it in the App Store and Google Play stores. </p>
+                    <p>
+                        We design the application page and publish it in the
+                        App Store and Google Play stores.
+                    </p>
                 </article>
 
                 <article class="stage-item">
                     <h3>Support</h3>
-                    <p> We monitor the stability of the application, update it for new devices and versions of iOS and Android.
+                    <p>
+                        We monitor the stability of the application, update it
+                        for new devices and versions of iOS and Android.
                     </p>
                 </article>
 
@@ -292,13 +334,16 @@
 
         <hr>
 
-        <section class="team-section" id="media">
+        <section class="team-section">
 
             <article class="team-description">
 
                 <h2>Our team</h2>
 
-                <p> Thousand is a full-cycle digital production company with its own product analytics, design, web and mobile development. </p>
+                <p>
+                    Thousand is a full-cycle digital production company with its own
+                    product analytics, design, web and mobile development.
+                </p>
 
                 <dl class="team-statistics">
 
@@ -319,7 +364,8 @@
 
                 </dl>
 
-                <p> All the necessary specialists - from a designer to a tester -
+                <p>
+                    All the necessary specialists - from a designer to a tester -
                     are on our staff. We hire the best specialists in the market.
                     It's expensive but worth it
                 </p>
@@ -338,7 +384,10 @@
 
             <article class="book-description">
 
-                <h2> Get the book for free by leaving<br> your contacts </h2>
+                <h2>
+                    Get the book for free by leaving<br>
+                    your contacts
+                </h2>
 
                 <form class="book-form" action="#" method="post">
 
@@ -405,8 +454,6 @@
 
     </main>
 
-    <hr>
-
     <footer class="site-footer" id="contacts">
 
         <div class="footer-container">
@@ -442,6 +489,5 @@
         </div>
 
     </footer>
-
 </body>
 </html>
