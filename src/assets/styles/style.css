@@ -50,7 +50,6 @@ hr {
     background: #dfe5ee;
 }
 
-/* шапка */
 
 .site-header {
     position: fixed;
@@ -124,7 +123,6 @@ hr {
     width: 20px;
 }
 
-/* бургер на компьютере скрыт */
 .burger-menu {
     display: none;
     flex-direction: column;
@@ -326,8 +324,6 @@ hr {
     text-underline-offset: 8px;
 }
 
-/* подвал*/
-
 .site-footer {
     padding: 40px 0 24px;
 }
@@ -373,8 +369,6 @@ hr {
     color: #9ca3af;
     font-size: 11px;
 }
-
-/* планшет */
 
 @media (max-width: 768px) {
 
@@ -545,8 +539,6 @@ hr {
         font-size: 12px;
     }
 }
-
-/* телефон */
 
 @media (max-width: 425px) {
 
