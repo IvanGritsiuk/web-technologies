@@ -451,7 +451,7 @@ hr {
 }
 
 .hero-image {
-  --scale: 1;
+  --u: clamp(0.7px, calc(100vw / 1440), 1.5px);
   position: absolute;
   z-index: 1;
   top: 0;
@@ -463,13 +463,13 @@ hr {
 }
 @media (max-width: 768px) {
   .hero-image {
-    --scale: 0.4;
+    --u: 0.4px;
     width: 52%;
   }
 }
 @media (max-width: 425px) {
   .hero-image {
-    --scale: 0.45;
+    --u: 0.45px;
     order: 2;
     position: relative;
     width: 100vw;
@@ -482,9 +482,9 @@ hr {
   position: absolute;
   top: -30%;
   bottom: -30%;
-  right: 0;
+  right: calc(var(--u) * -30);
   display: flex;
-  gap: calc(var(--scale) * 24px);
+  gap: calc(var(--u) * 24);
   transform: rotate(-15deg);
 }
 @media (max-width: 425px) {
@@ -498,14 +498,17 @@ hr {
   background-size: 100% auto;
 }
 .hero-column--left {
-  width: calc(var(--scale) * 485px);
+  position: relative;
+  z-index: 1;
+  width: calc(var(--u) * 485);
+  transform: translateX(calc(var(--u) * 90));
   background-image: url("../img/column-left.webp");
-  animation: column-up 40s linear infinite;
+  animation: column-up 40s -6s linear infinite;
 }
 .hero-column--right {
-  width: calc(var(--scale) * 293px);
+  width: calc(var(--u) * 293);
   background-image: url("../img/column-right.webp");
-  animation: column-down 40s linear infinite;
+  animation: column-down 40s -34.6s linear infinite;
 }
 
 @keyframes column-up {
@@ -513,12 +516,12 @@ hr {
     background-position-y: 0;
   }
   to {
-    background-position-y: calc(var(--scale) * -1960px);
+    background-position-y: calc(var(--u) * -1960);
   }
 }
 @keyframes column-down {
   from {
-    background-position-y: calc(var(--scale) * -1959px);
+    background-position-y: calc(var(--u) * -1959);
   }
   to {
     background-position-y: 0;

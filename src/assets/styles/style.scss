@@ -18,12 +18,15 @@ $phone: 425px;
 
 $container: 1208px;
 
-$column-left-width: 485px;
-$column-left-height: 1960px;
-$column-right-width: 293px;
-$column-right-height: 1959px;
+$column-left-width: 485;
+$column-left-height: 1960;
+$column-right-width: 293;
+$column-right-height: 1959;
 
 $column-duration: 40s;
+
+$column-left-start: -6s;
+$column-right-start: -34.6s;
 
 @mixin tablet {
     @media (max-width: $tablet) {
@@ -84,7 +87,6 @@ hr {
     height: 1px;
     background: $divider;
 }
-
 
 .site-header {
     position: fixed;
@@ -473,9 +475,9 @@ hr {
     }
 }
 
-
 .hero-image {
-    --scale: 1;
+    --u: clamp(0.7px, calc(100vw / 1440), 1.5px);
+
     position: absolute;
     z-index: 1;
     top: 0;
@@ -486,13 +488,13 @@ hr {
     pointer-events: none;
 
     @include tablet {
-        --scale: 0.4;
+        --u: 0.4px;
 
         width: 52%;
     }
 
     @include phone {
-        --scale: 0.45;
+        --u: 0.45px;
 
         order: 2;
         position: relative;
@@ -506,9 +508,9 @@ hr {
     position: absolute;
     top: -30%;
     bottom: -30%;
-    right: 0;
+    right: calc(var(--u) * -30);
     display: flex;
-    gap: calc(var(--scale) * 24px);
+    gap: calc(var(--u) * 24);
     transform: rotate(-15deg);
 
     @include phone {
@@ -521,15 +523,18 @@ hr {
     background-size: 100% auto;
 
     &--left {
-        width: calc(var(--scale) * #{$column-left-width});
+        position: relative;
+        z-index: 1;
+        width: calc(var(--u) * #{$column-left-width});
+        transform: translateX(calc(var(--u) * 90));
         background-image: url("../img/column-left.webp");
-        animation: column-up $column-duration linear infinite;
+        animation: column-up $column-duration $column-left-start linear infinite;
     }
 
     &--right {
-        width: calc(var(--scale) * #{$column-right-width});
+        width: calc(var(--u) * #{$column-right-width});
         background-image: url("../img/column-right.webp");
-        animation: column-down $column-duration linear infinite;
+        animation: column-down $column-duration $column-right-start linear infinite;
     }
 }
 
@@ -539,13 +544,13 @@ hr {
     }
 
     to {
-        background-position-y: calc(var(--scale) * -#{$column-left-height});
+        background-position-y: calc(var(--u) * -#{$column-left-height});
     }
 }
 
 @keyframes column-down {
     from {
-        background-position-y: calc(var(--scale) * -#{$column-right-height});
+        background-position-y: calc(var(--u) * -#{$column-right-height});
     }
 
     to {
@@ -646,7 +651,6 @@ hr {
             color: $blue;
         }
     }
-
 
     p br {
         @include tablet {
