@@ -636,13 +636,12 @@ hr {
         color: $text-tech;
 
         @include tablet {
-            max-width: 300px;
+            max-width: none;
             font-size: 14px;
             line-height: 22.5px;
         }
 
         @include phone {
-            max-width: 270px;
             font-size: 12px;
             line-height: 20px;
         }
@@ -652,9 +651,11 @@ hr {
         }
     }
 
-    p br {
+    h3 + p br {
+        display: none;
+
         @include tablet {
-            display: none;
+            display: inline;
         }
     }
 }
@@ -701,6 +702,1151 @@ hr {
             font-weight: 700;
             text-decoration: underline $blue 2px;
             text-underline-offset: 8px;
+        }
+    }
+}
+
+$blue-bg: #3358e4;
+$text-muted: #6b7280;
+$card-shadow: 0 4px 16px rgba(25, 42, 70, 0.08);
+
+@mixin above-phone {
+    @media (min-width: #{$phone + 1}) {
+        @content;
+    }
+}
+
+@mixin above-tablet {
+    @media (min-width: #{$tablet + 1}) {
+        @content;
+    }
+}
+
+@mixin section-padding($desktop-vertical, $tablet-padding, $phone-padding) {
+    padding: $desktop-vertical max(24px, calc((100% - #{$container}) / 2));
+
+    @include tablet {
+        padding: $tablet-padding;
+    }
+
+    @include phone {
+        padding: $phone-padding;
+    }
+}
+
+@mixin section-title($margin-bottom, $tablet-margin: $margin-bottom, $phone-margin: $tablet-margin) {
+    margin: 0 0 $margin-bottom;
+    font-size: 36px;
+    line-height: 52px;
+
+    @include tablet {
+        margin-bottom: $tablet-margin;
+        font-size: 30px;
+        line-height: 41px;
+    }
+
+    @include phone {
+        margin-bottom: $phone-margin;
+        font-size: 24px;
+        line-height: 34px;
+    }
+}
+
+.industries-section {
+    background: $bg-hero;
+    @include section-padding(96px, 40px 32px 20px, 28px 14px 12px);
+
+    h2 {
+        @include section-title(32px, 48px, 24px);
+
+        span {
+            color: $blue;
+        }
+    }
+}
+
+.industries-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px 40px;
+
+    @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(8, auto);
+        grid-auto-flow: column;
+        gap: 14px 0;
+    }
+
+    @include phone {
+        gap: 12px 12px;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        font-size: 16px;
+        line-height: 22px;
+
+        @include phone {
+            gap: 14px;
+            font-size: 13px;
+            line-height: 18px;
+        }
+
+        img {
+            flex: none;
+            width: 47px;
+            height: 47px;
+            border-radius: 50%;
+            object-fit: contain;
+
+            @include tablet {
+                width: 45px;
+                height: 45px;
+            }
+
+            @include phone {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+
+    @include tablet {
+    li:nth-child(1)  { order: 1; }
+    li:nth-child(2)  { order: 9; }
+    li:nth-child(3)  { order: 6; }
+    li:nth-child(4)  { order: 2; }
+    li:nth-child(5)  { order: 10; }
+    li:nth-child(6)  { order: 7; }
+    li:nth-child(7)  { order: 3; }
+    li:nth-child(8)  { order: 11; }
+    li:nth-child(9)  { order: 14; }
+    li:nth-child(10) { order: 4; }
+    li:nth-child(11) { order: 12; }
+    li:nth-child(12) { order: 15; }
+    li:nth-child(13) { order: 5; }
+    li:nth-child(14) { order: 13; }
+    li:nth-child(15) { order: 8; }
+}
+}
+
+.projects-section {
+    background: $bg-hero;
+    @include section-padding(96px, 20px 32px 48px, 16px 14px 32px);
+
+    @include phone {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.projects-intro {
+    h2 {
+        @include section-title(24px, 24px, 20px);
+    }
+
+    p {
+        max-width: 620px;
+        margin: 0;
+        font-size: 15px;
+        line-height: 21px;
+
+        @include tablet {
+            max-width: 470px;
+        }
+
+        @include phone {
+            max-width: 300px;
+            font-size: 13px;
+            line-height: 19px;
+        }
+    }
+}
+
+.projects-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin: 64px 0 60px;
+
+    @include tablet {
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 1;
+        margin: 40px 0 0;
+    }
+
+    @include phone {
+        display: contents;
+    }
+
+    ul {
+        display: flex;
+        gap: 28px;
+        margin: 0;
+        padding: 0 0 0 17px;
+        list-style: none;
+
+        @include tablet {
+            width: 100%;
+            margin-bottom: 40px;
+            padding-left: 19px;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        @include phone {
+            order: 1;
+            flex-wrap: wrap;
+            gap: 12px 17px;
+            margin: 24px 0;
+            padding-left: 0;
+            overflow: visible;
+            white-space: normal;
+        }
+    }
+
+    li a {
+        display: block;
+        padding: 6px 6px 8px 0;
+        font-size: 16px;
+        line-height: 22px;
+        border-bottom: 2px solid transparent;
+
+        @include tablet {
+            font-size: 14px;
+        }
+
+        @include phone {
+            padding: 4px 6px 6px 0;
+            font-size: 13px;
+            line-height: 18px;
+        }
+
+        &:hover {
+            color: $blue;
+        }
+    }
+
+    li:first-child a {
+        border-bottom-color: $blue;
+    }
+
+    > a {
+        padding: 12px 26px;
+        border-radius: 6px;
+        background: $blue;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 18px;
+        white-space: nowrap;
+
+        &:hover {
+            background: $blue-dark;
+        }
+
+        @include tablet {
+            margin-left: auto;
+            margin-bottom: -42px;
+            font-size: 14px;
+        }
+
+        @include phone {
+            order: 3;
+            align-self: center;
+            width: 228px;
+            margin: 28px 0 0;
+            padding: 9px 0;
+            text-align: center;
+        }
+    }
+}
+
+.project-card {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: center;
+    gap: 40px;
+
+    @include tablet {
+        display: block;
+        position: relative;
+    }
+
+    @include phone {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        order: 2;
+    }
+}
+
+.project-description {
+    h3 {
+        margin: 0 0 40px;
+        font-size: 36px;
+        line-height: 43px;
+
+        @include tablet {
+            margin-bottom: 24px;
+        }
+
+        @include phone {
+            margin-bottom: 18px;
+            font-size: 28px;
+            line-height: 34px;
+        }
+    }
+
+    p {
+        max-width: 620px;
+        margin: 0 0 32px;
+        font-size: 15px;
+        line-height: 21px;
+
+        @include tablet {
+            max-width: 440px;
+        }
+
+        @include phone {
+            max-width: none;
+            margin-bottom: 16px;
+            font-size: 13px;
+            line-height: 19px;
+        }
+
+        &:nth-of-type(2) {
+            max-width: none;
+            color: $text-muted;
+            font-size: 16px;
+
+            @include tablet {
+                font-size: 15px;
+            }
+
+            @include phone {
+                margin-bottom: 28px;
+                font-size: 12px;
+            }
+        }
+    }
+
+    > ul:not(.app-links) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px 32px;
+        margin: 0 0 40px;
+        padding: 0;
+        list-style: none;
+
+        @include tablet {
+            margin-bottom: 32px;
+        }
+
+        @include phone {
+            margin-bottom: 28px;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 16px;
+
+            @include phone {
+                font-size: 13px;
+            }
+
+            img {
+                flex: none;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    dl {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px 48px;
+        margin: 0 0 40px;
+
+        @include tablet {
+            margin-bottom: 32px;
+        }
+
+        @include phone {
+            margin-bottom: 30px;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        dt {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 34px;
+
+            @include tablet {
+                font-size: 24px;
+                line-height: 30px;
+            }
+
+            @include phone {
+                font-size: 20px;
+                line-height: 26px;
+            }
+        }
+
+        dd {
+            margin: 8px 0 0;
+            color: $text-muted;
+            font-size: 14px;
+
+            @include tablet {
+                font-size: 13px;
+            }
+
+            @include phone {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+.app-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    img {
+        height: 42px;
+        width: auto;
+
+        @include phone {
+            height: 36px;
+        }
+    }
+}
+
+.project-image {
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    @include tablet {
+        position: absolute;
+        right: -6px;
+        bottom: 32px;
+        width: 48%;
+    }
+
+    @include phone {
+        position: static;
+        order: -1;
+        width: 100%;
+    }
+}
+
+@mixin blue-block {
+    background: $blue-bg;
+    color: #fff;
+}
+
+@mixin card-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: start;
+    column-gap: 24px;
+    width: 100%;
+    padding: 36px 24px 28px;
+    background: #fff;
+    border-radius: 12px;
+    color: $text;
+
+    @include phone {
+        grid-template-columns: 1fr;
+        padding: 36px 16px 28px;
+    }
+
+    label {
+        align-self: end;
+        min-height: 20px;
+        margin-bottom: 4px;
+        color: $text-gray;
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    input {
+        width: 100%;
+        min-height: 36px;
+        margin-bottom: 20px;
+        padding: 4px 0;
+        border: 0;
+        border-bottom: 1px solid $line;
+        outline: none;
+        background: transparent;
+        font-size: 16px;
+
+        &::placeholder {
+            color: $text;
+            opacity: 1;
+        }
+
+        &:focus {
+            border-bottom-color: $blue;
+        }
+    }
+
+    button {
+        justify-self: end;
+        min-height: 40px;
+        margin-top: 16px;
+        padding: 0 26px;
+        border: 0;
+        border-radius: 6px;
+        background: $blue;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+
+        &:hover {
+            background: $blue-dark;
+        }
+
+        @include phone {
+            justify-self: start;
+        }
+    }
+}
+
+.discussion-section {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 635px);
+    align-items: center;
+    gap: 48px;
+    @include blue-block;
+    @include section-padding(90px, 24px 32px, 34px 18px 20px);
+
+    @include tablet {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    @include phone {
+        gap: 100px 0;
+    }
+
+    > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    &::after {
+        content: "THOUSAND";
+        display: none;
+        position: absolute;
+        left: 16px;
+        top: 105px;
+        color: rgba(255, 255, 255, 0.05);
+        font-size: 16vw;
+        font-weight: 700;
+        line-height: 1;
+        pointer-events: none;
+
+        @include tablet {
+            display: block;
+        }
+
+        @include phone {
+            top: 185px;
+            left: 8px;
+        }
+    }
+}
+
+.discussion-description {
+    h2 {
+        @include section-title(24px, 32px, 22px);
+    }
+
+    p {
+        max-width: 400px;
+        margin: 0;
+        font-size: 15px;
+        line-height: 21px;
+
+        @include tablet {
+            max-width: 350px;
+            line-height: 20px;
+        }
+
+        @include phone {
+            max-width: 290px;
+            font-size: 14px;
+            line-height: 21px;
+        }
+    }
+}
+
+.discussion-form {
+    @include card-form;
+
+    @include tablet {
+        max-width: 614px;
+    }
+
+    @include above-phone {
+        label:nth-of-type(1) { grid-column: 1; grid-row: 1; }
+        input:nth-of-type(1) { grid-column: 1; grid-row: 2; }
+        label:nth-of-type(2) { grid-column: 2; grid-row: 1; }
+        input:nth-of-type(2) { grid-column: 2; grid-row: 2; }
+
+        button {
+            grid-column: 2;
+            grid-row: 3;
+        }
+    }
+
+    @include phone {
+        button {
+            justify-self: center;
+            width: 221px;
+            margin-top: 4px;
+        }
+    }
+}
+
+.book-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) 1fr;
+    align-items: center;
+    gap: 48px;
+    @include blue-block;
+    @include section-padding(90px, 76px 40px 64px 76px, 42px 36px 48px 48px);
+
+    @include tablet {
+        grid-template-columns: 337px 1fr;
+        gap: 0 40px;
+    }
+
+    @include phone {
+        grid-template-columns: 1fr;
+        gap: 32px 0;
+    }
+}
+
+.book-description {
+    @include tablet {
+        display: contents;
+    }
+
+    h2 {
+        max-width: 640px;
+        @include section-title(40px, 48px, 0);
+
+        @include tablet {
+            grid-column: 1 / -1;
+            max-width: none;
+        }
+
+        @include phone {
+            order: 1;
+        }
+    }
+}
+
+.book-form {
+    @include card-form;
+    max-width: 635px;
+
+    input {
+        margin-bottom: 26px;
+
+        @include tablet {
+            margin-bottom: 40px;
+        }
+
+        @include phone {
+            margin-bottom: 28px;
+        }
+    }
+
+    @include tablet {
+        grid-template-columns: 1fr;
+        padding: 44px 33px 36px;
+
+        button {
+            justify-self: start;
+            margin-top: 8px;
+        }
+    }
+
+    @include phone {
+        grid-column: 1;
+        order: 3;
+        padding: 38px 24px 32px 29px;
+
+        button {
+            margin-top: 16px;
+        }
+    }
+
+    @include above-tablet {
+        label:nth-of-type(1) { grid-column: 1; grid-row: 1; }
+        input:nth-of-type(1) { grid-column: 1; grid-row: 2; }
+        label:nth-of-type(2) { grid-column: 2; grid-row: 1; }
+        input:nth-of-type(2) { grid-column: 2; grid-row: 2; }
+        label:nth-of-type(3) { grid-column: 1 / -1; grid-row: 3; }
+        input:nth-of-type(3) { grid-column: 1 / -1; grid-row: 4; }
+
+        button {
+            grid-column: 2;
+            grid-row: 5;
+        }
+    }
+}
+
+.book-image {
+    img {
+        max-height: 520px;
+        width: auto;
+        margin: 0 auto;
+
+        @include tablet {
+            max-height: 420px;
+            margin: 0 0 0 auto;
+        }
+
+        @include phone {
+            max-height: 200px;
+            margin: 0 auto;
+        }
+    }
+
+    @include tablet {
+        grid-column: 2;
+        grid-row: 2;
+        align-self: end;
+        max-width: 246px;
+        justify-self: end;
+    }
+
+    @include phone {
+        grid-column: 1;
+        grid-row: auto;
+        order: 2;
+        justify-self: center;
+        align-self: auto;
+    }
+}
+
+.stages-section {
+    @include section-padding(80px, 32px 40px 28px, 64px 20px 20px);
+
+    > h2 {
+        @include section-title(32px, 40px, 40px);
+
+        @include phone {
+            max-width: 270px;
+        }
+    }
+}
+
+.stages-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 32%));
+    grid-template-rows: repeat(3, auto);
+    grid-auto-flow: column;
+    justify-content: space-between;
+    gap: 8px 24px;
+
+    @include tablet {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        grid-auto-flow: row;
+        gap: 32px;
+    }
+
+    @include phone {
+        gap: 24px;
+    }
+}
+
+.stage-item {
+    position: relative;
+    overflow: hidden;
+    min-height: 171px;
+    padding: 24px 24px 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: $card-shadow;
+
+    @include tablet {
+        min-height: 172px;
+    }
+
+    @include phone {
+        min-height: 0;
+        padding: 24px 20px 20px;
+    }
+
+    .stage-number {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        height: 100%;
+        width: auto;
+        pointer-events: none;
+    }
+
+    h3,
+    p {
+        position: relative;
+        z-index: 1;
+    }
+
+    h3 {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        margin: 0 0 14px;
+        font-size: 20px;
+        line-height: 24px;
+
+        @include tablet {
+            margin-bottom: 16px;
+        }
+
+        @include phone {
+            gap: 16px;
+            font-size: 18px;
+        }
+
+        img {
+            flex: none;
+            width: 48px;
+            height: 48px;
+        }
+    }
+
+    p {
+        margin: 0;
+        font-size: 15px;
+        line-height: 21px;
+
+        @include tablet {
+            max-width: 480px;
+        }
+
+        @include phone {
+            max-width: 210px;
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+}
+
+.team-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 40px;
+    background: $bg-hero;
+    @include section-padding(96px, 40px 32px 48px, 36px 20px 36px);
+
+    @include tablet {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+.team-description {
+    @include tablet {
+        display: contents;
+    }
+
+    h2 {
+        @include section-title(40px, 32px, 20px);
+
+        @include tablet {
+            order: 1;
+        }
+    }
+
+    p {
+        max-width: 620px;
+        margin: 0;
+        font-size: 15px;
+        line-height: 21px;
+
+        @include phone {
+            font-size: 13px;
+            line-height: 17px;
+        }
+
+        &:nth-of-type(1) {
+            @include tablet {
+                order: 2;
+                margin-bottom: 40px;
+            }
+
+            @include phone {
+                margin-bottom: 24px;
+            }
+        }
+
+        &:nth-of-type(2) {
+            @include tablet {
+                order: 5;
+                max-width: 642px;
+                padding-left: 32px;
+            }
+
+            @include phone {
+                max-width: none;
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+.team-statistics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 64px;
+    margin: 40px 0;
+
+    @include tablet {
+        order: 4;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        max-width: 640px;
+        margin: 80px 0 40px 32px;
+    }
+
+    @include phone {
+        max-width: none;
+        margin: 64px 0 16px;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    dt {
+        font-size: 54px;
+        font-weight: 700;
+        line-height: 64px;
+
+        @include tablet {
+            font-size: 48px;
+            line-height: 52px;
+        }
+
+        @include phone {
+            font-size: 26px;
+            line-height: 32px;
+        }
+    }
+
+    dd {
+        margin: 8px 0 0;
+        color: $text-muted;
+        font-size: 16px;
+
+        @include tablet {
+            font-size: 15px;
+        }
+
+        @include phone {
+            font-size: 12px;
+        }
+    }
+}
+
+.team-image {
+    position: relative;
+
+    @include tablet {
+        order: 3;
+    }
+
+    img:not(.play-button) {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        box-shadow: 0 36px 36px -24px rgba(17, 24, 39, 0.35);
+    }
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+
+    @include phone {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+.faq-section {
+    @include section-padding(80px, 24px 40px 32px, 28px 12px 24px 22px);
+
+    > h2 {
+        @include section-title(40px, 32px, 8px);
+    }
+}
+
+.faq-questions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 26px;
+
+    @include tablet {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin: 0 30px 0 50px;
+        border-top: 1px solid $divider;
+    }
+
+    @include phone {
+        margin: 0;
+        border-top: 0;
+    }
+}
+
+.faq-column {
+    border-top: 1px solid $divider;
+
+    @include tablet {
+        border-top: 0;
+
+        &:nth-child(2) {
+            order: -1;
+        }
+    }
+}
+
+.faq-question {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 24px;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid $divider;
+
+    @include phone {
+        padding: 24px 0;
+    }
+
+    h3 {
+        margin: 0;
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 500;
+
+        @include phone {
+            font-size: 17px;
+            line-height: 26px;
+        }
+    }
+
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-column: 2;
+        grid-row: 1;
+        width: 56px;
+        height: 56px;
+        padding: 0 0 4px;
+        border: 0;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 4px 14px rgba(25, 42, 70, 0.12);
+        color: $blue;
+        font-size: 44px;
+        font-weight: 300;
+        line-height: 1;
+
+        @include phone {
+            width: 52px;
+            height: 52px;
+            font-size: 38px;
+        }
+    }
+
+    p {
+        display: none;
+        grid-column: 1;
+        margin: 0;
+        font-size: 15px;
+        line-height: 21px;
+
+        @include phone {
+            font-size: 13px;
+        }
+    }
+
+    &--open {
+        align-items: start;
+        padding-top: 28px;
+
+        @include phone {
+            padding-top: 20px;
+        }
+
+        h3 {
+            margin-bottom: 24px;
+
+            @include phone {
+                margin-bottom: 16px;
+            }
+        }
+
+        button {
+            padding: 0;
+            background: none;
+            box-shadow: none;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        p {
+            display: block;
+
+            & + p {
+                margin-top: 21px;
+            }
         }
     }
 }
