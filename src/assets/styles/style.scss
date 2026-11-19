@@ -1164,8 +1164,13 @@ $card-shadow: 0 4px 16px rgba(25, 42, 70, 0.08);
     }
 }
 
+$noise-cover: 0.88;
+
 @mixin blue-block {
-    background: $blue-bg;
+    background-color: $blue-bg;
+    background-image:
+        linear-gradient(rgba($blue-bg, $noise-cover), rgba($blue-bg, $noise-cover)),
+        url("../img/back.png");
     color: #fff;
 }
 
@@ -1241,11 +1246,11 @@ $card-shadow: 0 4px 16px rgba(25, 42, 70, 0.08);
     position: relative;
     overflow: hidden;
     display: grid;
-    grid-template-columns: 1fr minmax(0, 635px);
-    align-items: center;
+    grid-template-columns: 1fr 600px;
+    align-items: start;
     gap: 48px;
     @include blue-block;
-    @include section-padding(90px, 24px 32px, 34px 18px 20px);
+    @include section-padding(80px, 24px 32px, 34px 18px 20px);
 
     @include tablet {
         grid-template-columns: 1fr;
@@ -1290,13 +1295,14 @@ $card-shadow: 0 4px 16px rgba(25, 42, 70, 0.08);
     }
 
     p {
-        max-width: 400px;
+        max-width: 380px;
         margin: 0;
-        font-size: 15px;
-        line-height: 21px;
+        font-size: 14px;
+        line-height: 20px;
 
         @include tablet {
             max-width: 350px;
+            font-size: 15px;
             line-height: 20px;
         }
 
@@ -1310,6 +1316,16 @@ $card-shadow: 0 4px 16px rgba(25, 42, 70, 0.08);
 
 .discussion-form {
     @include card-form;
+
+    // desktop only: card proportions from the template
+    @include above-tablet {
+        padding: 32px 24px 24px;
+        border-radius: 16px;
+
+        input {
+            min-height: 32px;
+        }
+    }
 
     @include tablet {
         max-width: 614px;
@@ -1342,7 +1358,7 @@ $card-shadow: 0 4px 16px rgba(25, 42, 70, 0.08);
     align-items: center;
     gap: 48px;
     @include blue-block;
-    @include section-padding(90px, 76px 40px 64px 76px, 42px 36px 48px 48px);
+    @include section-padding(42px, 76px 40px 64px 76px, 42px 36px 48px 48px);
 
     @include tablet {
         grid-template-columns: 337px 1fr;
@@ -1377,7 +1393,7 @@ $card-shadow: 0 4px 16px rgba(25, 42, 70, 0.08);
 
 .book-form {
     @include card-form;
-    max-width: 635px;
+    max-width: 600px;
 
     input {
         margin-bottom: 26px;
@@ -1412,6 +1428,9 @@ $card-shadow: 0 4px 16px rgba(25, 42, 70, 0.08);
     }
 
     @include above-tablet {
+        padding: 32px 24px 24px;
+        border-radius: 16px;
+
         label:nth-of-type(1) { grid-column: 1; grid-row: 1; }
         input:nth-of-type(1) { grid-column: 1; grid-row: 2; }
         label:nth-of-type(2) { grid-column: 2; grid-row: 1; }
@@ -1428,7 +1447,7 @@ $card-shadow: 0 4px 16px rgba(25, 42, 70, 0.08);
 
 .book-image {
     img {
-        max-height: 520px;
+        max-height: 504px;
         width: auto;
         margin: 0 auto;
 
@@ -1788,6 +1807,7 @@ $card-shadow: 0 4px 16px rgba(25, 42, 70, 0.08);
         }
     }
 
+    // plus (image) is shown when the answer is closed
     .faq-plus {
         grid-column: 2;
         grid-row: 1;
@@ -1801,6 +1821,7 @@ $card-shadow: 0 4px 16px rgba(25, 42, 70, 0.08);
         }
     }
 
+    // cross is shown when the answer is open
     .faq-close {
         display: none;
         grid-column: 2;
@@ -1837,6 +1858,7 @@ $card-shadow: 0 4px 16px rgba(25, 42, 70, 0.08);
         }
     }
 
+    // open answer: the browser opens <details> by click, no JS needed
     &[open] {
         padding-top: 28px;
 

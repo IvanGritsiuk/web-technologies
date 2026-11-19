@@ -1183,12 +1183,13 @@ hr {
   position: relative;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1fr minmax(0, 635px);
-  align-items: center;
+  grid-template-columns: 1fr 600px;
+  align-items: start;
   gap: 48px;
-  background: #3358e4;
+  background-color: #3358e4;
+  background-image: linear-gradient(rgba(51, 88, 228, 0.88), rgba(51, 88, 228, 0.88)), url("../img/back.png");
   color: #fff;
-  padding: 90px max(24px, (100% - 1208px) / 2);
+  padding: 80px max(24px, (100% - 1208px) / 2);
 }
 @media (max-width: 768px) {
   .discussion-section {
@@ -1259,14 +1260,15 @@ hr {
   }
 }
 .discussion-description p {
-  max-width: 400px;
+  max-width: 380px;
   margin: 0;
-  font-size: 15px;
-  line-height: 21px;
+  font-size: 14px;
+  line-height: 20px;
 }
 @media (max-width: 768px) {
   .discussion-description p {
     max-width: 350px;
+    font-size: 15px;
     line-height: 20px;
   }
 }
@@ -1346,6 +1348,15 @@ hr {
     justify-self: start;
   }
 }
+@media (min-width: 769px) {
+  .discussion-form {
+    padding: 32px 24px 24px;
+    border-radius: 16px;
+  }
+  .discussion-form input {
+    min-height: 32px;
+  }
+}
 @media (max-width: 768px) {
   .discussion-form {
     max-width: 614px;
@@ -1386,9 +1397,10 @@ hr {
   grid-template-columns: minmax(0, 1.2fr) 1fr;
   align-items: center;
   gap: 48px;
-  background: #3358e4;
+  background-color: #3358e4;
+  background-image: linear-gradient(rgba(51, 88, 228, 0.88), rgba(51, 88, 228, 0.88)), url("../img/back.png");
   color: #fff;
-  padding: 90px max(24px, (100% - 1208px) / 2);
+  padding: 42px max(24px, (100% - 1208px) / 2);
 }
 @media (max-width: 768px) {
   .book-section {
@@ -1519,7 +1531,7 @@ hr {
   }
 }
 .book-form {
-  max-width: 635px;
+  max-width: 600px;
 }
 .book-form input {
   margin-bottom: 26px;
@@ -1555,6 +1567,10 @@ hr {
   }
 }
 @media (min-width: 769px) {
+  .book-form {
+    padding: 32px 24px 24px;
+    border-radius: 16px;
+  }
   .book-form label:nth-of-type(1) {
     grid-column: 1;
     grid-row: 1;
@@ -1586,7 +1602,7 @@ hr {
 }
 
 .book-image img {
-  max-height: 520px;
+  max-height: 504px;
   width: auto;
   margin: 0 auto;
 }
