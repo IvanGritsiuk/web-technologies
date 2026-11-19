@@ -1317,7 +1317,6 @@ $noise-cover: 0.88;
 .discussion-form {
     @include card-form;
 
-    // desktop only: card proportions from the template
     @include above-tablet {
         padding: 32px 24px 24px;
         border-radius: 16px;
@@ -1807,7 +1806,6 @@ $noise-cover: 0.88;
         }
     }
 
-    // plus (image) is shown when the answer is closed
     .faq-plus {
         grid-column: 2;
         grid-row: 1;
@@ -1821,7 +1819,6 @@ $noise-cover: 0.88;
         }
     }
 
-    // cross is shown when the answer is open
     .faq-close {
         display: none;
         grid-column: 2;
@@ -1858,7 +1855,6 @@ $noise-cover: 0.88;
         }
     }
 
-    // open answer: the browser opens <details> by click, no JS needed
     &[open] {
         padding-top: 28px;
 
